@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <style>
+        .place-container li {
+            color: blue;
+        }
+        
+        #name-tittle {
+            color: black;
+        }
+        
+        .important-places {
+            color: chocolate;
+        }
+        
+        #fruits-title {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>
+            Welcome to the DOM
+        </h1>
+    </header>
+    <main>
+        <section>
+            <h1>My Awesome DOM</h1>
+            <ul>
+                <li class="important-places">
+                    ios development
+                </li>
+                <li class="important-places">
+                    Programming with angela
+                </li>
+                <li class="important-places">
+                    Apple apps
+                </li>
+                <li class="other-places">Steve Jobs</li>
+            </ul>
+        </section>
+        <section>
+            <h1 id="name-tittle">My Full Name</h1>
+            <ul>
+                <li>Imtiaz</li>
+                <li>Ahmed</li>
+                <li>Shishir</li>
+            </ul>
+        </section>
+        <section id="place-container" class="">
+            <h1 id="places-tittle">Place I would like to visit</h1>
+            <ul>
+                <li>Japan</li>
+                <li>Norway</li>
+                <li>Alaska,USA</li>
+            </ul>
+        </section>
+        <section class="fruits-container">
+            <h1 id="fruits-title" class="some-class random-class blue-bg">Fruits I like</h1>
+            <ul class="fruit-list">
+                <li class="seasonal-fruit">Apple</li>
+                <li class="seasonal-fruit">Banana</li>
+                <li class="seasonal-fruit">Carrot</li>
+                <li class="seasonal-fruit">Mango</li>
+            </ul>
+        </section>
+    </main>
+    <script src="Javascript/dom.js"></script>
+    <script src="Javascript/styleInJs.js"></script>
+    <script src="Javascript/append.js"></script>
+    <script>
+        const liCollection = document.getElementsByTagName('li');
+        // console.log(liCollection);
+        for (const li of liCollection) {
+            // console.log(li.innerText);
+        }
+        const allheadings = document.getElementsByTagName('h1');
+        for (const h1 of allheadings) {
+            // console.log(h1.innerText);
+        }
+        const namesTittle = document.getElementById('name-tittle');
+        namesTittle.innerText = "Name change by JS"
+        const places = document.getElementsByClassName('important-places');
+        for (const place of places) {
+            // console.log(place.innerText);
+        }
+        // querySelectorAll
+        const someLi = document.querySelectorAll('.place-container li');
+        console.log(someLi);
+        for (const li of someLi) {
+            // console.log(li.innerText);
+        }
+    </script>
+
+</body>
+
+</html>
